@@ -14,7 +14,7 @@ const router = express.Router();
 
 
 app.use(cors());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
+
 
 app.use('/messages', postRoute);
 app.use(bodyParser.urlencoded({extended: true}));
@@ -33,11 +33,21 @@ io.on('connection', (socket) => {
   });
 });
 
+
+router.get('/',(req,res) =>{
+    res.json({
+      'pelsoft': 'Hi from pelsoft netlify deployd'
+    });
+});
+
 http.listen(5000, () => {
   console.log('catu chat server started on port 5000');
   console.log('For check -> http://localhost:5000/messages/')
+  console.log('For check -> http://localhost:5000/.netlify/functions/api')
 
 });
+
+app.use('/.netlify/functions/api', router);  // path must route to lambda
 module.exports = app;
 
 module.exports.handler = serverless(app);
