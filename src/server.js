@@ -1,20 +1,25 @@
 'use strict';
+
+const express = require('express');
+const serverless = require('serverless-http');
+
+
+
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const postRoute = require('./routes.js');
 
 let numberUser = 0;
 
-const app = require('express')();
+
+
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const serverless = require('serverless-http');
-const express = require('express');
-const router = express.Router();
-
 
 app.use(cors());
 
+const router = express.Router();
 
 app.use('/messages', postRoute);
 app.use(bodyParser.urlencoded({extended: true}));

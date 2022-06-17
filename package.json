@@ -4,12 +4,12 @@
   "main": "server.js",
   "description": "socket.io server",
   "scripts": {
-    "startNetlify": "./node_modules/.bin/netlify-lambda serve src",
-    "buildNetlify": "./node_modules/.bin/netlify-lambda serve src",
-    "start": "nodemon src/server.js",
-    "prod": "node dist/bundle.js",
-    "dev": "webpack --mode development",
-    "build": "webpack"
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src",
+    "startDev": "nodemon src/server.js",
+    
+    "dev": "webpack --mode development"
+    
   },
   "dependencies": {
     "express": "^4.18.1",
