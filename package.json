@@ -4,6 +4,7 @@
   "main": "server.js",
   "description": "socket.io server",
   "scripts": {
+    "postinstall": "netlify-lambda install",
     "start": "./node_modules/.bin/netlify-lambda serve src",
     "build": "./node_modules/.bin/netlify-lambda build src",
     "startDev": "nodemon src/server.js",
