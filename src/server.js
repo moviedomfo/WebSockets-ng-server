@@ -9,7 +9,7 @@ const postRoute = require('./routes.js');
 
 let numberUser = 0;
 
-
+const PORT = 8080;
 
 const app = express();
 const http = require('http').Server(app);
@@ -43,14 +43,15 @@ router.get('/',(req,res) =>{
     });
 });
 
-http.listen(5000, () => {
-  console.log('catu chat server started on port 5000');
-  console.log('For check -> http://localhost:5000/messages/')
-  console.log('For check -> http://localhost:5000/.netlify/functions/api')
+http.listen(PORT, () => {
+  console.log(`catu chat server started on ${PORT} `);
+  console.log(`For check -> http://localhost:${PORT}/messages/`)
+  
 
 });
 
-app.use('/.netlify/functions/api', router);  // path must route to lambda
+//app.use('/.netlify/functions/api', router);  // path must route to lambda
+app.use('/api', router);  // path must route to lambda
 module.exports = app;
 
 module.exports.handler = serverless(app);
