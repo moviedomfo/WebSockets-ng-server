@@ -1,6 +1,6 @@
 {
    
-    "watch": ["src"],
+    "watch": ["functions"],
     "ext": "js, json, ts, tsx"
     
   }

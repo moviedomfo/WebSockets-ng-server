@@ -3,7 +3,7 @@ module.exports = {
   target : 'node',
   mode: "production",
   entry: {
-    app: path.resolve(__dirname, "src", "server.js"),
+    app: path.resolve(__dirname, "functions", "server.js"),
   },
   output: {
     filename: "bundle.js",
