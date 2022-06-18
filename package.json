@@ -8,7 +8,9 @@
     "start": "./node_modules/.bin/netlify-lambda serve src",
     "build": "./node_modules/.bin/netlify-lambda build src",
     "startDev": "nodemon src/server.js",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode development"
+
   },
   "dependencies": {
     "express": "^4.18.1",
