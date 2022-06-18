@@ -4,7 +4,7 @@ const postRoutes = express.Router();
 
 // Defined store route
 postRoutes.route('/add').post(function (req, res) {
-  res.status(200).json({'business': 'business in added successfully'});
+  res.status(200).json({'business': 'post business in added successfully'});
 
 });
 
